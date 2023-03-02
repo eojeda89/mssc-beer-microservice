@@ -1,5 +1,10 @@
 package guru.springframework.msscbeerservice.web.model;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Null;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,13 +19,23 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 public class BeerDto {
+    @Null
     private UUID id;
+    @Null
     private Integer version;
+    @NotNull
     private String beerName;
+    @NotNull
     private BeerStyleEnum beerStyle;
+    @Null
     private OffsetDateTime createDate;
+    @Null
     private OffsetDateTime lastModifiedDate;
+    @Positive
+    @NotNull
     private Long upc;
+    @Positive
+    @NotNull
     private BigDecimal price;
     private Integer quantityOnHand;
 }
